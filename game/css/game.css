@@ -1,0 +1,142 @@
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	overflow: hidden;
+	user-select: none;
+	height: 100%
+}
+
+#page {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	/* border: solid 1px #fbdec0; */
+	/* background-color: #3a2027; */
+}
+
+#card_space {
+	padding: 8px;
+	height: 100%;
+}
+
+/* #card_space {
+	border-style: solid;
+    border-image: url(../img/card-side.png) 0 100;
+    height: 100%;
+    border-width: 0 50px;
+} */
+
+#balance {
+	width: calc(100%-10px);
+}
+
+
+
+#balance img {
+	aspect-ratio: 1/1;
+}
+
+#narrative {
+	margin: 0 auto;
+}
+
+q {
+	font-style: italic;
+	quotes: none;
+}
+
+ins {
+	display: block;
+	text-align: right;
+	font-weight: bold;
+	font-style: normal;
+	font-family: 'Cinzel', serif;
+	font-size: initial;
+	text-decoration: none;
+}
+
+#card_behind,
+.swipe {
+	position: absolute;
+	left: 50%;
+	overflow: hidden;
+	padding: 0;
+}
+
+#card_behind {
+	transform: translate(-50%, 0);
+}
+
+.swipe {
+	transform: translate(-50%, 50%);  /* also hardcoded in swipe.js -> rotate() */
+	transform-origin: 0% 200%;
+}
+
+#card_offset {
+	visibility: hidden;
+}
+
+.card {
+	border-radius: 15pt;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.card img {
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+}
+
+.left.action {
+	text-align: left;
+	right: 0;
+}
+
+.right.action {
+	text-align: right;
+	left: 0;
+}
+
+.action {
+	display: none;
+	padding: 10pt 20pt;
+	width: 50%;
+	position: absolute;
+	color: white;
+	text-shadow: 1px 0 0 black, 0 1px 0 black, -1px 0 0 black, 0 -1px 0 black;
+	font-weight: bold;
+}
+
+.button {
+	cursor: pointer;
+	border-radius: 20%;
+	/* background-color: white; */
+	float: right;
+}
+
+#links {
+	width: 100%;
+	font-size: x-small;
+	position: absolute;
+	bottom: 0;
+	height: 6em;	
+	color: lightgray;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#links a {
+	text-decoration: none;
+	color: white;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.nav {
+	width: 20px;
+}

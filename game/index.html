@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta property="og:title" content="Roots of Gold">
+  <meta property="og:description" content="Interactive Tale - One Swipe at a Time">
+  <meta property="og:image" content="http://gamej.am/img/logo.png">
+  <meta property="og:url" content="http://gamej.am">
+
+  <link rel="shortcut icon" href="img/logo.png">
+
+  <title>Roots of Gold</title>
+</head>
+
+<body>
+  <div id="background"><img id="scene" src="stories/rootsofgold/img/scene.png"></div>
+  <div id="page">
+    <div id="balance"><!-- filled by score.js --></div>
+      <div id="card_space">
+      <div id="narrative">
+        <p>Once upon a time there was an old king who was so ill...
+        <ins>Swipe card left or right to continue...</ins></p>
+      </div>
+      <div id="card_behind" class="card">
+        <img src="stories/rootsofgold/img/card/unknown.png" alt="unknown card" title="unknown card">
+      </div>
+      <div class="swipe" id="current_swipe">
+        <div id="current_card" class="card">
+          <p class="action left">What happens when you swipe left</p>
+          <p class="action right">What happens when you swipe right</p>
+          <img src="stories/rootsofgold/img/card/dagon.png" alt="old king card" title="old king card">
+        </div>
+        <div id="card_offset" class="card">
+          <img src="stories/rootsofgold/img/card/unknown.png">
+        </div>
+      </div>
+    </div>
+
+    <div id="debug" style="display: none; position: absolute; width: 100%; top: 0; color: white;">
+      <label for="story">story source:</label>
+      <input id="story" type="text" value="stories/rootsofgold/story.csv" />[<a
+        href="https://docs.google.com/spreadsheets/d/1N2TX5G59T9z6tlyIEbXTSZCaHk09DXstBK6leT2r4Mk/edit#gid=0"
+        target="_blank">edit</a>]
+      <br />
+      <label for="left_card">left:</label>
+      <input id="left_card" type="text" value="0" size="3" class="nav" />
+      <input id="left_keywords" type="hidden" value="0" />
+      <label for="current">Current:</label>
+      <input id="current" type="text" value="0" size="3" class="nav"/>
+      <label for="right_card">right:</label>
+      <input id="right_card" type="text" value="0" size="3" class="nav" />
+      <input id="right_keywords" type="hidden" value="0" />
+      <br />
+    </div>
+  </div>
+
+  <template id="balance-template">
+    <div class ="score">
+      <img class="empty">
+      <img class="full">
+    </div>
+  </template>
+
+  <script type="text/javascript" src="lib/papaparse.min.js"></script>
+
+  <link rel="preload" as="fetch" href="stories/rootsofgold/story.csv" type="text/csv" crossorigin>
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/landscape.css">
+  <!-- https://stackoverflow.com/questions/2099517/how-to-load-in-an-external-css-file-dynamically#2099555 -->
+  <link rel="stylesheet" href="css/balance.css">
+  <link rel="stylesheet" href="stories/rootsofgold/css/story.css">
+
+  <script type="text/javascript" src="stories/rootsofgold/js/score.js"></script>
+  <script type="text/javascript" src="js/score.js"></script>
+  <script type="text/javascript" src="stories/rootsofgold/js/narrative.js"></script>
+  <script type="text/javascript" src="js/swipe.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/debug.js"></script>
+
+  <footer id="links">
+    <img id="sound_switch" class="button" src="img/btn/sound.png" />
+    <!-- <a href="https://www.streamlinehq.com">Image placeholders based on Streamline</a>
+    <br />
+    <a href="https://www.vast-project.eu">Partially supported by the VAST Project</a>
+    <br />
+    <a href="https://cordis.europa.eu/project/id/101004949">(EU Horizon 2020 grant agreement No 101004949)</a>
+    <br />
+    This website reflects only the view of the authors and the EC is not responsible for any use that may be made of the information it contains. -->
+  </footer>
+
+  <audio id="music" loop>
+    <source src="audio/medival.mp3" type="audio/mpeg">
+    <source src="audio/medival.wav" type="audio/wav">
+    Upgrade your browser to hear the game audio.
+  </audio>
+  <audio id="card_pick">
+    <source src="audio/cards_short.mp3" type="audio/mpeg">
+    <source src="audio/cards_short.wav" type="audio/wav">
+    Upgrade your browser to hear the game audio.
+  </audio>
+  <audio id="card_drop">
+    <source src="audio/cards.mp3" type="audio/mpeg">
+    <source src="audio/cards.wav" type="audio/wav">
+    Upgrade your browser to hear the game audio.
+  </audio>
+</body>
+
+</html>
