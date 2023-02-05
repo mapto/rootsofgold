@@ -72,14 +72,19 @@ body {
 }
 
 #card_space {
-    background-image: url("../img/screen.png");
+    /* background-image: url("../img/screen.png"); */
     background-size: 100% auto;
     background-repeat: no-repeat;
+    border-image-source: url("../img/screen.png");
+    border-image-slice: 65 118 63 112 fill;
+    border-width: 30px 70px;
     border-color: transparent;
-    border-width: 1px 2em 0 4rem;
-    width: 970px;
+    border-style: solid;
+    /* padding: 15px; */
+    /* border-image-width: 30; */
+    width: 900px;
     /* aspect-ratio: 16/9; */
-    height: 540px;
+    height: 500px;
     overflow: hidden;
     position: absolute;
     margin-top: 10%;    
