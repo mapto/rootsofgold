@@ -15,17 +15,18 @@
 </head>
 
 <body>
-  <div id="background"><img id="scene" src="stories/rootsofgold/img/scene.png"></div>
+  <!-- <div id="background"></div> -->
   <div id="page">
+    <img id="scene" src="stories/rootsofgold/img/scene.png">
     <div id="balance"><!-- filled by score.js --></div>
+    <div id="narrative">
+      <p>Hello Jenkins, we've been mining in Ore City for so long and only now we've found the source of gold.
+      <ins>Swipe screen left or right to continue...</ins></p>
+    </div>
       <div id="card_space">
-      <div id="narrative">
-        <p>Once upon a time there was an old king who was so ill...
-        <ins>Swipe card left or right to continue...</ins></p>
-      </div>
-      <div id="card_behind" class="card">
+      <!-- <div id="card_behind" class="card">
         <img src="stories/rootsofgold/img/card/unknown.png" alt="unknown card" title="unknown card">
-      </div>
+      </div> -->
       <div class="swipe" id="current_swipe">
         <div id="current_card" class="card">
           <p class="action left">What happens when you swipe left</p>
@@ -92,17 +93,30 @@
 
   <audio id="music" loop>
     <source src="audio/medival.mp3" type="audio/mpeg">
-    <source src="audio/medival.wav" type="audio/wav">
     Upgrade your browser to hear the game audio.
   </audio>
   <audio id="card_pick">
     <source src="audio/cards_short.mp3" type="audio/mpeg">
-    <source src="audio/cards_short.wav" type="audio/wav">
     Upgrade your browser to hear the game audio.
   </audio>
   <audio id="card_drop">
     <source src="audio/cards.mp3" type="audio/mpeg">
-    <source src="audio/cards.wav" type="audio/wav">
+    Upgrade your browser to hear the game audio.
+  </audio>
+  <audio id="current_card_text" src="stories/rootsofgold/audio/blocks/0.mp3" type="audio/mpeg">
+    Upgrade your browser to hear the game audio.
+  </audio>
+  <audio id="current_swipe_left" src="stories/rootsofgold/audio/blocks/0l.mp3" type="audio/mpeg">
+    Upgrade your browser to hear the game audio.
+  </audio>
+  <audio id="current_swipe_right" src="stories/rootsofgold/audio/blocks/0r.mp3" type="audio/mpeg">
+    Upgrade your browser to hear the game audio.
+  </audio>
+  <audio id="left_card_text">
+    <source src="stories/rootsofgold/audio/blocks/2.mp3" type="audio/mpeg">
+    Upgrade your browser to hear the game audio.
+  </audio>
+  <audio id="right_card_text" src="stories/rootsofgold/audio/blocks/2.mp3" type="audio/mpeg">
     Upgrade your browser to hear the game audio.
   </audio>
 </body>

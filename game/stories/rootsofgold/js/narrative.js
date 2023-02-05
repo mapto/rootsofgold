@@ -44,6 +44,7 @@ function load_story() {
                 // TODO add logic that handles left or right, based on different types:
                 // end event leads to 0, satellite event doesn't affect subsequent states
                 events[row[0]] = {
+                    "id": row[0],
                     "text": row[1],
                     "image": row[2], // derived from role
                     "type": row[3],
@@ -63,8 +64,34 @@ function load_story() {
             // After the story is downloaded, card is overwritten
             // TODO: Add nice placeholder to show before that, maybe loader
             var current = document.querySelector("#current").value
+
+            // TODO: load sounds dynamically
+
             load_card(current)                }
     })    
+}
+
+function load_audio(card) {
+    console.log(card);
+    var audio = document.querySelector("#current_card_text");
+    audio.src = "stories/rootsofgold/audio/blocks/" + card.id + ".mp3"; 
+    audio.load();
+
+    audio = document.querySelector("#current_swipe_left");
+    audio.src = "stories/rootsofgold/audio/blocks/" + card.id + "l.mp3";  
+    audio.load();
+
+    audio = document.querySelector("#current_swipe_right");
+    audio.src = "stories/rootsofgold/audio/blocks/" + card.id + "r.mp3";  
+    audio.load();
+    audio = document.querySelector("#right_card_text");
+    audio.src = "stories/rootsofgold/audio/blocks/" + card.right.id + ".mp3";
+    audio.load();
+
+    audio = document.querySelector("#left_card_text");
+    audio.src = "stories/rootsofgold/audio/blocks/" + card.left.id + ".mp3";    
+    audio.load();
+
 }
 
 /**
@@ -96,6 +123,11 @@ function load_story() {
     card_img.alt = card.image
     card_img.title = card.image
 
+    // TODO: read correct card
+    console.log("play sound");
+    console.log(document.querySelector("#current_card_text"));
+    document.querySelector("#current_card_text").play();
+
     // TODO end and satellite events won't have sequel cards defined
     // Instead end card would always restart the game and satellite card would keep the sequel unchanged
     document.querySelector("#current_swipe .card .action.left").innerText = card.left.text
@@ -104,6 +136,8 @@ function load_story() {
     document.querySelector("#right_card").value = card.right.id
     document.querySelector("#left_keywords").value = card.left.values
     document.querySelector("#right_keywords").value = card.right.values
+
+    load_audio(card);
 
     if (document.location.href.endsWith("debug")) {
         if (card.left.values)

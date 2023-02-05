@@ -15,6 +15,7 @@ body {
 }
 
 #scene {
+    z-index: -1;
     width: 130%;
     position: absolute;
     top: 50%;
@@ -25,24 +26,33 @@ body {
 }
 
 #narrative {
+    background-image: url("../img/screen.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 500px;
+    aspect-ratio: 16/9;
+    overflow: hidden;
     position: absolute;
     color: lightgray;
-    top: 80%;
+    top: 75%;
+    /* top: 80%;
     left: 20%;
-    width: 30%;
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%); */
+}
+
+#narrative p {
+    margin: 30px;
 }
 
 #balance {
-    position: absolute;
-    /* top: 20%; */
+    position: relative;
+    float: right;
+    top: 20%;
+    right: 0;
     /* right: -20%; */
     width: 10%;
-    /* -moz-transform: translateX(-50%) translateY(-50%); */
-    /* -webkit-transform: translateX(-50%) translateY(-50%); */
-    /* transform: translateX(-50%) translateY(-50%); */
 }
 
 #balance div {
@@ -54,10 +64,25 @@ body {
 	width: 100%;
 }
 
+#card_space {
+    background-image: url("../img/screen.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    border-color: transparent;
+    border-width: 1px 2em 0 4rem;
+    width: 970px;
+    /* aspect-ratio: 16/9; */
+    height: 540px;
+    overflow: hidden;
+    position: absolute;
+    margin-top: 10%;    
+}
+
 #card_behind,
 .swipe {
-	left: 36%;
-	bottom: 40%;
-    zoom: 0.75;
+	/* left: 36%; */
+	/* bottom: 40%;
+    zoom: 0.75; */
+    aspect-ratio: 16/9;
 }
 

@@ -1,5 +1,5 @@
 var swipe = {"on": false}
-var default_transform = "translate(-50%, 50%)"
+var default_transform = "translate(-100%, 400%) scale(2)"
 
 /**
  * dummy function to disable event handling
@@ -23,7 +23,15 @@ function rotate(elt, deg) {
     elt.style.transform = "rotate(" + deg + "deg) " + default_transform
 }
 
+function interrupt_sound() {
+    // document.querySelector("#current_card_text").pause()
+    // document.querySelector("#current_swipe_left").pause()
+    // document.querySelector("#current_swipe_right").pause()    
+}
+
+
 function reset_swipe() {
+    interrupt_sound();
     document.querySelector("#card_pick").pause()
     document.querySelector("#card_drop").pause()
 
@@ -42,9 +50,13 @@ function swipe_show(rot) {
     if (rot < -2) {
         card.querySelector(".left.action").style.display = "inherit"
         card.querySelector(".right.action").style.display = "none"
+        interrupt_sound();
+        document.querySelector("#current_swipe_left").play()
     } else if (rot > 2) {
         card.querySelector(".right.action").style.display = "inherit"
         card.querySelector(".left.action").style.display = "none"
+        interrupt_sound();
+        document.querySelector("#current_swipe_right").play()
     } else {
         card.querySelector(".right.action").style.display = "none"
         card.querySelector(".left.action").style.display = "none"
@@ -57,7 +69,6 @@ function swipe_out(side) {
     update_score(document.querySelector("#" + side + "_keywords").value)
     load_card(document.querySelector("#" + side + "_card").value)
     reset_swipe()
-    // TODO score
 }
 
 function start_swipe(e) {
@@ -80,6 +91,7 @@ function swipe_done(e) {
     }
 
     var rot = (unify(e).clientX - swipe.x)/20;
+    console.log(rot);
     if (rot < -5) {
         swipe_out("left");
     } else if (rot > 5) {
@@ -93,7 +105,7 @@ function swipe_complete(start_x, end_x) {
     var page = document.querySelector("#page")
     var page_x = page.offsetLeft
     var width = page.offsetWidth
-    var swipe_zone = width / 10
+    var swipe_zone = width / 100
     if (end_x < start_x) {
         if (end_x < swipe_zone + page_x) {
             return true

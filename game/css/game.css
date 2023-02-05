@@ -12,7 +12,7 @@ body {
 #page {
 	position: relative;
 	height: 100%;
-	overflow: hidden;
+	/* overflow: hidden; */
 	/* border: solid 1px #fbdec0; */
 	/* background-color: #3a2027; */
 }
@@ -67,12 +67,12 @@ ins {
 }
 
 #card_behind {
-	transform: translate(-50%, 0);
+	transform: translate(-50%, 0) scale(2);
 }
 
 .swipe {
-	transform: translate(-50%, 50%);  /* also hardcoded in swipe.js -> rotate() */
-	transform-origin: 0% 200%;
+	transform: translate(-100%, 400%) scale(2);  /* also hardcoded in swipe.js -> rotate() */
+	transform-origin: 0% 400%;
 }
 
 #card_offset {
@@ -80,7 +80,7 @@ ins {
 }
 
 .card {
-	border-radius: 15pt;
+	/* border-radius: 15pt; */
 	overflow: hidden;
 	margin: 0;
 	padding: 0;

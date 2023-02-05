@@ -21,14 +21,14 @@ function init_score() {
         let root = clone.querySelector(".score");
         root.id = s.id;
         document.querySelector("#balance").appendChild(root);
-        set_score(s, 0);
+        set_score(s, 10);
     })
 }
 
 function update_score(keywords) {
-    console.log(keywords)
+    // console.log(keywords)
     var tokens = keywords.split(/[, ;]+/)
-    console.log(tokens)
+    // console.log(tokens)
     for (var s of scores) {
         let indicator = document.querySelector("#balance #" + s.id + " .full")
         let field = indicator.style.clipPath.split('%')[0].substr(6); // parse inset
@@ -40,7 +40,7 @@ function update_score(keywords) {
                 value -= 10
             }
             indicator.style.clipPath = "inset(" + (100 - value) + "% 0 0 0)";
-            if (value >= 1) {
+            if (value >= 100) {
                 load_card(s.full_card)
             } else if (value <= 0) {
                 load_card(s.empty_card)
