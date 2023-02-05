@@ -73,7 +73,7 @@ function load_story() {
 }
 
 function load_audio(card) {
-    console.log(card);
+    // console.log(card);
     var audio = document.querySelector("#current_card_text");
     audio.src = "stories/rootsofgold/audio/blocks/" + card.id + ".mp3"; 
     audio.load();
@@ -128,10 +128,6 @@ function load_audio(card) {
     card_img.alt = card.image
     card_img.title = card.image
 
-    // TODO: read correct card
-    // console.log(document.querySelector("#current_card_text"));
-    document.querySelector("#current_card_text").play();
-
     // TODO end and satellite events won't have sequel cards defined
     // Instead end card would always restart the game and satellite card would keep the sequel unchanged
     document.querySelector("#current_swipe .card .action.left").innerText = card.left.text
@@ -142,6 +138,7 @@ function load_audio(card) {
     document.querySelector("#right_keywords").value = card.right.values
 
     load_audio(card);
+    document.querySelector("#current_card_text").play();
 
     if (document.location.href.endsWith("debug")) {
         if (card.left.values)
