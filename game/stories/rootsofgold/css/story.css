@@ -8,8 +8,6 @@ body {
     position: absolute;
     top: 40%;
     left: 50%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     width: 95%;
 }
@@ -20,9 +18,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50.5%) translateY(-40%);
+    transform: translateX(-50%) translateY(-50%);
     display: none;
 }
 
@@ -40,9 +36,10 @@ body {
     overflow: hidden;
     position: absolute;
     color: lightgray;
-    bottom: 1vh;
+    /* bottom: 1vh; */
     /* top: 75%; */
-    /* top: 80%;
+    top: 80%;
+    /*
     left: 20%;
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -87,7 +84,7 @@ body {
     height: 500px;
     overflow: hidden;
     position: absolute;
-    margin-top: 10%;    
+    margin-top: 8%;    
 }
 
 #card_behind,
