@@ -27,6 +27,7 @@ voices = {
     "quinn": "AZnzlk1XvdvUeBnXmlld",  # "Domi",
     "happyend": "pNInz6obpgDQGcFmaJgB",  # "Adam",
     "badend": "pNInz6obpgDQGcFmaJgB",  #  "Adam",
+    "robot": "pNInz6obpgDQGcFmaJgB",  #  "Adam",
     "player": "TxGEqnHWrfWFTfGW9XjX",  # "Josh"
 }
 
@@ -38,7 +39,8 @@ from secret import api_key
 
 def build(s: str, r: str, address: str):
     """From https://stackoverflow.com/a/53101953/1827854"""
-    local_filename = f"{address.strip()}-{r.strip()}.mp3"
+    # local_filename = f"{address.strip()}-{r.strip()}.mp3"
+    local_filename = f"{address.strip()}.mp3"
 
     if (s.strip(),r.strip()) in cache:
         shutil.copyfile(cache[(s.strip(),r.strip())], local_filename)
@@ -68,7 +70,8 @@ def build(s: str, r: str, address: str):
 
 
 if __name__ == "__main__":
-    with open("game/stories/rootsofgold/story.short.csv") as csvfile:
+    # with open("game/stories/rootsofgold/story.short.csv") as csvfile:
+    with open("game/stories/rootsofgold/story.csv") as csvfile:
         spamreader = csv.reader(csvfile)
         title = True
         present = []

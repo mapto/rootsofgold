@@ -28,9 +28,24 @@ function init_game() {
     init_sound()
     init_score()
 
-    document.querySelector("#music").muted = 
+    let music = document.querySelector("#music")
+    document.querySelector("#music").volume = 0.1;
+    document.querySelector("#music").muted = true;
     // console.log("Init")
     load_story()
 }
 
+function start_game() {
+    // console.log(events)
+    // After the story is downloaded, card is overwritten
+    // TODO: Add nice placeholder to show before that, maybe loader
+    var current = document.querySelector("#current").value
+
+    // TODO: load sounds dynamically
+    load_card(current);
+    document.querySelector("#splash").style.display = "none";
+}
+
 window.onload = init_game
+
+document.querySelector("#splash").onclick = start_game

@@ -10,7 +10,7 @@ function set_score(score, percent) {
     eltEmpty.src = "stories/" + storyname + "/img/balance/" + s.id + "-full." + icon_format;
     eltEmpty.alt = s.positive[0] + " vs " + s.negative[0]
     eltEmpty.title = eltEmpty.alt
-    console.log(eltEmpty.title)
+    // console.log(eltEmpty.title)
     eltEmpty.style.clipPath = "inset(" + (100 - percent) + "% 0 0 0)";
 }
 

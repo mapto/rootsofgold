@@ -4,6 +4,25 @@ body {
 	font-family: 'Share Tech', sans;
 }
 
+#splash {
+    z-index: 1;
+    background-image: url("../img/splash.png");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    width: 80%;
+    aspect-ratio: 16/9;
+    display: inherit;
+    border: 3px solid black;
+}
+
+#splash p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: xx-large;
+}
+
 #background {
     position: absolute;
     top: 40%;
@@ -47,7 +66,7 @@ body {
 }
 
 #narrative p {
-    margin: 30px;
+    margin: 30px 50px;
 }
 
 #balance {

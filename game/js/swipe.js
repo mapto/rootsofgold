@@ -91,7 +91,7 @@ function swipe_done(e) {
     }
 
     var rot = (unify(e).clientX - swipe.x)/20;
-    console.log(rot);
+    // console.log(rot);
     if (rot < -5) {
         swipe_out("left");
     } else if (rot > 5) {

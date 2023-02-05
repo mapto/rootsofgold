@@ -25,6 +25,7 @@ var completions = {
     "13": "se",
     "40": "e",
     "50": "ne",
+    "60": "nw",
 };
 
 function load_story() {
@@ -66,14 +67,7 @@ function load_story() {
                     }
                 }
             }
-            // console.log(events)
-            // After the story is downloaded, card is overwritten
-            // TODO: Add nice placeholder to show before that, maybe loader
-            var current = document.querySelector("#current").value
 
-            // TODO: load sounds dynamically
-
-            load_card(current);
         }
     })    
 }
@@ -135,8 +129,7 @@ function load_audio(card) {
     card_img.title = card.image
 
     // TODO: read correct card
-    console.log("play sound");
-    console.log(document.querySelector("#current_card_text"));
+    // console.log(document.querySelector("#current_card_text"));
     document.querySelector("#current_card_text").play();
 
     // TODO end and satellite events won't have sequel cards defined
