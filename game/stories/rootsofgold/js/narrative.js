@@ -1,6 +1,6 @@
 var storyname = "rootsofgold"; 
 
-var narrators = ["narrator", "badend", "goodend"]
+var narrators = ["narrator", "badend", "goodend", "robot"]
 
 // This is fallback content if story.csv cannot be loaded. This would be the case when running locally
 // Notice that event ids/keys are strings, not numbers
@@ -20,6 +20,12 @@ var events = {
         }
     }
 }
+
+var completions = {
+    "13": "se",
+    "40": "e",
+    "50": "ne",
+};
 
 function load_story() {
     // console.log("Load story")
@@ -67,7 +73,8 @@ function load_story() {
 
             // TODO: load sounds dynamically
 
-            load_card(current)                }
+            load_card(current);
+        }
     })    
 }
 
@@ -103,6 +110,10 @@ function load_audio(card) {
     // console.log(events)    
     var card = events[card_id]
     // console.log(card)
+
+    if (card_id in completions) {
+        document.querySelector("#hole-" + completions[card_id]).style.display = "inherit";
+    }
 
     if (card.text.length > 250) {
         document.querySelector("#narrative").style.fontSize = "inherit"    

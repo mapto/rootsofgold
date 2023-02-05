@@ -10,8 +10,8 @@ var scores = [
     },
     {
         "id": "tree",
-        "positive": ["stability"],
-        "negative": ["fragility"],
+        "positive": ["stability", "tree"],
+        "negative": ["fragility", "cut"],
         "full_card": 1000,
         "empty_card": 1001
     },

@@ -15,9 +15,12 @@ CSV format description:
 - 8 right_sequel
 - 9 right_keywords
 """
+from typing import Dict, Tuple
+
 import os
 import csv
 import requests
+import shutil
 
 voices = {
     "dagon": "VR6AewLTigWG4xSOukaG",  # "Arnold",
@@ -28,12 +31,21 @@ voices = {
 }
 
 
+cache: Dict[Tuple[str,str],str] = {}
+
 from secret import api_key
 
 
 def build(s: str, r: str, address: str):
     """From https://stackoverflow.com/a/53101953/1827854"""
     local_filename = f"{address.strip()}-{r.strip()}.mp3"
+
+    if (s.strip(),r.strip()) in cache:
+        shutil.copyfile(cache[(s.strip(),r.strip())], local_filename)
+        print(f"Copying {cache[(s.strip(),r.strip())]} to {local_filename}")
+        return local_filename
+    cache[(s.strip(),r.strip())] = local_filename
+
     if os.path.exists(local_filename):
         print(f"Skipping {local_filename}")
         return local_filename
