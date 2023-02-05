@@ -14,7 +14,7 @@ body {
     width: 95%;
 }
 
-#scene {
+.scene {
     z-index: -1;
     width: 130%;
     position: absolute;
@@ -23,6 +23,12 @@ body {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50.5%) translateY(-40%);
+    display: none;
+}
+
+#scene {
+    z-index: -2;
+    display: inherit;
 }
 
 #narrative {
@@ -34,7 +40,8 @@ body {
     overflow: hidden;
     position: absolute;
     color: lightgray;
-    top: 75%;
+    bottom: 1vh;
+    /* top: 75%; */
     /* top: 80%;
     left: 20%;
     -moz-transform: translateX(-50%) translateY(-50%);
