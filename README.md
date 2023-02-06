@@ -2,6 +2,8 @@
 
 A card-swiping interactive novel made for [Global Game Jam 2023](https://globalgamejam.org/2023/games/roots-gold-0). Available on [itch.io](https://mapto.itch.io/roots-of-gold).
 
+![Screenshot preview](screenshot.png)
+
 Check out the [diagram](https://github.com/mapto/rootsofgold/tree/main/game/stories/rootsofgold) of the branching story.
 
 ## Synopsis 
